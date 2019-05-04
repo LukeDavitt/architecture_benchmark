@@ -18,12 +18,16 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
-  username: postgres
-  password:
   pool: 5
 
 development:
+  <<: *default
+  database: architecture_benchmark_development
+  host: db
+  username: postgres
+  password:
+
+local:
   <<: *default
   database: architecture_benchmark_development
 
