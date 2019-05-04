@@ -1,0 +1,54 @@
+.container
+  .row
+    .eight.columns
+      h4 Sort by String
+      table.u-full-width
+        thead
+          tr
+            th Algorithm
+            th # of Tests
+            th Average Execution Time
+            th Mean Execution Time
+        tbody
+          - @algorithms.each do |algo|
+            - unless algo.title == 'Run All'
+              tr
+                td #{algo.title}
+                td #{algo.tests.by_category('name').count}
+                td #{average_execution_time(algo, 'name')}
+                td #{mean_execution_time(algo, 'name')}
+
+    .four.columns
+      = form_tag tests_path do
+        = hidden_field_tag :sort_by ,'name'
+        label for='algorithms' Select Algorithm
+        = select_tag :algorithm, options_from_collection_for_select(Algorithm.ordered, 'id', 'title')
+        br
+        = submit_tag 'run tests', class: 'button-primary'
+  .row.margin-40
+    .eight.columns
+      h4 Sort by Int
+      table.u-full-width
+        thead
+          tr
+            th Algorithm
+            th # of Tests
+            th Average Execution Time
+            th Mean Execution Time
+        tbody
+          - @algorithms.each do |algo|
+            - unless algo.title == 'Run All'
+              tr
+                td #{algo.title}
+                td #{algo.tests.by_category('number').count}
+                td #{average_execution_time(algo, 'number')}
+                td #{mean_execution_time(algo, 'number')}
+
+    .four.columns
+      = form_tag tests_path do
+        = hidden_field_tag :sort_by, 'number'
+        label for='algorithms' Select Algorithm
+        = select_tag :algorithm, options_from_collection_for_select(Algorithm.ordered, 'id', 'title')
+        br
+        = submit_tag 'run tests', class: 'button-primary'
+    
