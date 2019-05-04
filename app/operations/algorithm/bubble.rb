@@ -3,14 +3,14 @@
 class Algorithm
   class Bubble
     def call(rec_attribute)
+      array = User.all.map{ |user| user[rec_attribute] }
       test = Test.create(algorithm: Algorithm.find_by(title: 'Bubble'), start_time: Time.zone.now, category: rec_attribute)
-      array = User.all.to_a
       n = array.length
       loop do
         swapped = false
       
         (n-1).times do |i|
-          if array[i][rec_attribute] > array[i+1][rec_attribute]
+          if array[i] > array[i+1]
             array[i], array[i+1] = array[i+1], array[i]
             swapped = true
           end

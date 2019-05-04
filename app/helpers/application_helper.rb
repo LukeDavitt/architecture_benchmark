@@ -1,13 +1,13 @@
 module ApplicationHelper
   def average_execution_time(algo, category)
     time = 'no tests'
-    time = algo.tests.by_category(category).map(&:execution_time).sum / algo.tests.by_category(category).count if algo.tests.by_category(category).count.positive?
+    time = algo.tests.timed.by_category(category).map(&:execution_time).sum / algo.tests.timed.by_category(category).count if algo.tests.timed.by_category(category).count.positive?
     time
   end
 
   def mean_execution_time(algo, category)
     time = 'no tests'
-    time = median(algo.tests.by_category(category).map(&:execution_time)) if algo.tests.by_category(category).count.positive?
+    time = median(algo.tests.timed.by_category(category).map(&:execution_time)) if algo.tests.timed.by_category(category).count.positive?
     time
   end
 

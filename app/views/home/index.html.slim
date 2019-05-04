@@ -14,7 +14,7 @@
             - unless algo.title == 'Run All'
               tr
                 td #{algo.title}
-                td #{algo.tests.by_category('name').count}
+                td #{algo.tests.timed.by_category('name').count}
                 td #{average_execution_time(algo, 'name')}
                 td #{mean_execution_time(algo, 'name')}
 
@@ -40,7 +40,7 @@
             - unless algo.title == 'Run All'
               tr
                 td #{algo.title}
-                td #{algo.tests.by_category('number').count}
+                td #{algo.tests.timed.by_category('number').count}
                 td #{average_execution_time(algo, 'number')}
                 td #{mean_execution_time(algo, 'number')}
 

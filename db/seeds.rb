@@ -22,7 +22,7 @@ Algorithm.delete_all
 Test.delete_all
 puts 'tables cleared'
 
-2500.times do
+5000.times do
   user = User.create(name: Faker::Name.name, number: rand(1..10000000))
   puts "created user: #{user.name}"
 end
