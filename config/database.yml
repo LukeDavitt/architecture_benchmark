@@ -20,14 +20,14 @@ default: &default
   encoding: unicode
   pool: 5
 
-development:
-  <<: *default
-  database: architecture_benchmark_development
-  host: db
-  username: postgres
-  password:
+# development:
+#   <<: *default
+#   database: architecture_benchmark_development
+#   host: db
+#   username: postgres
+#   password:
 
-local:
+development:
   <<: *default
   database: architecture_benchmark_development
 
