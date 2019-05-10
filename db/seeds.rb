@@ -16,15 +16,15 @@ ALGORITHMS = [
   'Run All'
 ].freeze
 
-User.delete_all
+#User.delete_all
 Algorithm.delete_all
 Test.delete_all
 puts 'tables cleared'
 
-5000.times do
-  user = User.create(name: Faker::Name.name, number: rand(1..10000000))
-  puts "created user: #{user.name}"
-end
+# 5000.times do
+#   user = User.create(name: Faker::Name.name, number: rand(1..10000000))
+#   puts "created user: #{user.name}"
+# end
 
 puts 'creating algorithms'
 ALGORITHMS.each { |algo| Algorithm.create(title: algo) }
