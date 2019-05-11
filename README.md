@@ -5,7 +5,7 @@ This repo is a basic test of different algorithms.  It runs a common set ( such 
 ## Setup
 
 It is recommonded to run this repo as a docker instance.  This will be the quickest and easiest setup.  Simply install [Docker](https://www.docker.com).  After that,
-run `docker-compose up` at the root of the directory.  When running for hte first time, you may need to run `docker-compose up` and `docker-compose down` several times to initially setup the postgresql server container.
+run `docker-compose up` at the root of the directory.  When running for the first time, you may need to run `docker-compose up` and `docker-compose down` several times to initially setup the postgresql server container.
 
 ## How to run the test scripts
 
